@@ -7,7 +7,7 @@ export default function UserInfo() {
   const router = useRouter();
 
   const labels = [
-    { name: "Nombre", type: "text", required: "required" },
+    { name: "Nombre Completo", type: "text", required: "required" },
     { name: "Correo", type: "email", required: "required" },
     { name: "Telefono", type: "tel", required: "required" },
     { name: "Direccion", type: "text" },
@@ -70,12 +70,23 @@ export default function UserInfo() {
           >
             <p className="mb-1 "> {label.name}:</p>
 
-            <input
-              type={label.type}
-              value={formState[label.name] || ""}
-              onChange={(e) => handleChange(e, label.name)}
-              required={label.required}
-            />
+            {label.type === "textarea" ? (
+              <textarea
+                className="border border-black rounded-lg pl-2"
+                value={formState[label.name] || ""}
+                onChange={(e) => handleChange(e, label.name)}
+                required={label.required}
+              />
+            ) : (
+              <input
+                className="border border-black rounded-lg pl-2"
+                type={label.type}
+                value={formState[label.name] || ""}
+                onChange={(e) => handleChange(e, label.name)}
+                required={label.required}
+                // placeholder={label.name}
+              />
+            )}
           </label>
         ))}
         <button className="mt-5" type="submit">
