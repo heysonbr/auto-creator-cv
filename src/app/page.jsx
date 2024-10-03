@@ -1,4 +1,5 @@
 import ResumeForm from "@/components/chat";
+import UserInfo from "@/components/userInfo";
 
 export default function Home() {
   return (
@@ -7,7 +8,9 @@ export default function Home() {
       <p className="">
         Create a tailored resume from any job offer in seconds!
       </p>
-      <ResumeForm />
+      <div className="container mt-20">
+        <UserInfo />
+      </div>
     </div>
   );
 }
