@@ -8,21 +8,25 @@ export default function Page() {
 
   useEffect(() => {
     const data = localStorage.getItem("formState");
-    if (data) {
-      const parsedData = JSON.parse(data);
-      const now = new Date();
-      const expirationDate = new Date(parsedData.expiration);
+    if (!data) {
+      router.push("/");
+      return;
+    }
 
-      // Si los datos no han expirado, actualiza el estado
-      if (now < expirationDate) {
-        setSavedData(parsedData.formState);
-      } else {
-        // Si los datos han expirado, elimínalos de localStorage
-        localStorage.removeItem("formState");
-      }
+    const parsedData = JSON.parse(data);
+    const now = new Date();
+    const expirationDate = new Date(parsedData.expiration);
+
+    // Si los datos no han expirado, actualiza el estado
+    if (now < expirationDate) {
+      setSavedData(parsedData.formState);
+    } else {
+      // Si los datos han expirado, elimínalos de localStorage
+      localStorage.removeItem("formState");
+      router.push("/");
     }
     console.log(data);
-  }, []);
+  }, [router]);
 
   const handleDelete = () => {
     localStorage.removeItem("formState");
