@@ -37,7 +37,7 @@ export default function Page() {
   console.log(savedData);
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center h-screen bg-orange-100 text-black">
       <h2>{savedData.Nombre}</h2>
       <button onClick={handleDelete}>Delete</button>
     </div>

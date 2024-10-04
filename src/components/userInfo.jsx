@@ -7,7 +7,7 @@ export default function UserInfo() {
   const router = useRouter();
 
   const labels = [
-    { name: "Nombre Completo", type: "text", required: "required" },
+    { name: "Nombre", type: "text", required: "required" },
     { name: "Correo", type: "email", required: "required" },
     { name: "Telefono", type: "tel", required: "required" },
     { name: "Direccion", type: "text" },
@@ -43,7 +43,6 @@ export default function UserInfo() {
     router.push("/workoffer");
   };
 
- 
   //   useEffect(() => {
   //     const savedData = JSON.parse(localStorage.getItem("formState"));
   //     if (savedData) {
