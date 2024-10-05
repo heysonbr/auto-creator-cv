@@ -77,6 +77,7 @@ export default function Page() {
             <label className="flex flex-col" htmlFor="offerInfo">
               <p>Información oferta</p>
               <textarea
+                className="w-96 h-28"
                 name="offerInfo"
                 id="offerInfo"
                 value={offerInfo}
