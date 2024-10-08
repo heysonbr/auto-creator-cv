@@ -84,6 +84,10 @@ export default function Page() {
                 onChange={(e) => setOfferInfo(e.target.value)}
               ></textarea>
             </label>
+            <label htmlFor="">
+              <p>nombre de la empresa</p>
+              <input type="text" name="" id="" />
+            </label>
             <button type="submit">Crear CV</button>
           </form>
         </div>
