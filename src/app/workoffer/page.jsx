@@ -74,20 +74,21 @@ export default function Page() {
         </div>
         <div className="flex flex-col">
           <form className="" onSubmit={handleSubmit}>
+            <label className="" htmlFor="">
+              <p>nombre de la empresa</p>
+              <input className="w-96 rounded-lg mb-4" type="text" name="" id="" />
+            </label>
             <label className="flex flex-col" htmlFor="offerInfo">
               <p>Información oferta</p>
               <textarea
-                className="w-96 h-28"
+                className="w-96 h-28 rounded-lg"
                 name="offerInfo"
                 id="offerInfo"
                 value={offerInfo}
                 onChange={(e) => setOfferInfo(e.target.value)}
               ></textarea>
             </label>
-            <label htmlFor="">
-              <p>nombre de la empresa</p>
-              <input type="text" name="" id="" />
-            </label>
+
             <button type="submit">Crear CV</button>
           </form>
         </div>
