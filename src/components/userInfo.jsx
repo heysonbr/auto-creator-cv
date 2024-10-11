@@ -68,11 +68,11 @@ export default function UserInfo() {
             className="my-2 flex flex-col justify-center items-center"
             key={index}
           >
-            <p className="mb-1 "> {label.name}:</p>
+            <p className="mb-1 font-semibold  "> {label.name}:</p>
 
             {label.type === "textarea" ? (
               <textarea
-                className="border border-black rounded-lg pl-2"
+                className="border border-black rounded-lg pl-2 h-20"
                 value={formState[label.name] || ""}
                 onChange={(e) => handleChange(e, label.name)}
                 required={label.required}
@@ -89,9 +89,15 @@ export default function UserInfo() {
             )}
           </label>
         ))}
-        <button className="mt-5" type="submit">
-          Siguiente
-        </button>
+        <div className="flex justify-center items-center ">
+          {" "}
+          <button
+            className="mt-5 font-bold text-2xl border rounded-lg border-black py-1 px-2"
+            type="submit"
+          >
+            Siguiente
+          </button>
+        </div>
       </form>
     </div>
   );
