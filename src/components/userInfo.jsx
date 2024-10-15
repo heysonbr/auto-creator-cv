@@ -72,7 +72,7 @@ export default function UserInfo() {
 
             {label.type === "textarea" ? (
               <textarea
-                className="border border-black rounded-lg pl-2 h-20"
+                className="border-2 border-black rounded-lg pl-2 h-20"
                 value={formState[label.name] || ""}
                 onChange={(e) => handleChange(e, label.name)}
                 required={label.required}
